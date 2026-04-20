@@ -8,7 +8,10 @@ services:
       - ./server/.env        
 
   frontend:
-    build: ./client
+    build:
+      context: ./client
+      args:
+        VITE_API_URL: /api
     container_name: frontend
     restart: always
 
